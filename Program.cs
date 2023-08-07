@@ -28,28 +28,24 @@ Console.WriteLine(eruptions.Where(c => c.Location == "Chile" ).OrderBy(c => c.Ye
 
 // 2. Find the first eruption from the "Hawaiian Is" location and print it. If none is found, print "No Hawaiian Is Eruption found."
 Console.WriteLine("2:");
-// Console.WriteLine(eruptions.Where(c => c.Location == "Hawaiian Is").First());
-var HawaiianIsVolcano = eruptions.Where(c => c.Location == "Hawaiian Is").ToList();
-if (HawaiianIsVolcano.Count() < 1)
+if (eruptions.Any(c => c.Location == "Hawaiian Is"))
 {
-    Console.WriteLine("No Hawaiian Is Eruption found.");
+    Console.WriteLine(eruptions.Where(c => c.Location == "Hawaiian Is").First());
 }
 else
 {
-    Console.WriteLine(eruptions.Where(c => c.Location == "Hawaiian Is").First());
+    Console.WriteLine("No Hawaiian Is Eruption found.");
 }
 
 // 3.Find the first eruption from the "Greenland" location and print it. If none is found, print "No Greenland Eruption found."
 Console.WriteLine("3:");
-var greenlandVolcano = eruptions.Where(c => c.Location == "Greenland").ToList();
-// Console.WriteLine(greenlandVolcano.Count() < 1?"No Greenland Eruption found.":greenlandVolcano);
-if (greenlandVolcano.Count() < 1)
+if (eruptions.Any(c => c.Location == "Greenland"))
 {
-    Console.WriteLine("No Greenland Eruption found.");
+    Console.WriteLine(eruptions.Where(c => c.Location == "Greenland").First());
 }
 else
 {
-    Console.WriteLine(eruptions.Where(c => c.Location == "Greenland").First());
+    Console.WriteLine("No Greenland Eruption found.");
 }
 
 // 4. Find the first eruption that is after the year 1900 AND in "New Zealand", then print it.
